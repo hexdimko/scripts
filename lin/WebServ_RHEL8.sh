@@ -2,8 +2,8 @@
 echo "Installing required packages"
 yum -y install nginx
 yum -y install yum-utils epel-release
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
-dnf module install php:remi-7.4						
+dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+dnf module install -y php:remi-7.4						
 yum -y install php-fpm php-mysql php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-pdo php-pecl-apcu php-pecl-apcu-devel php-pgsql 
 sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php.ini
 sed -i "s/user = apache/user = nginx/g" /etc/php-fpm.d/www.conf
