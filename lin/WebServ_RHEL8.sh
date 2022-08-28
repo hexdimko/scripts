@@ -85,3 +85,4 @@ systemctl start nginx
 systemctl status php-fpm
 systemctl status nginx
 echo "WebServer install complete"
+echo "Ensure that SELINUX is disabled and try web on:"; hostname -I
